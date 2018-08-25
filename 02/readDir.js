@@ -1,7 +1,7 @@
 const fs = require('fs');
 const path = require('path');
-const copyFile = require('./copyFile');
-const createDir = require('./createDir');
+const copyFile = require('./modules/copyFile');
+const createDir = require('./modules/createDir');
 const { promisify } = require('util');
 const readdir = promisify(fs.readdir);
 const stat = promisify(fs.stat);
@@ -45,7 +45,5 @@ const readDir = async (base, destination) => {
     }
   }
 };
-
-readDir('test', 'ggg');
 
 module.exports = readDir;
